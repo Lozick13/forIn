@@ -2,11 +2,11 @@ export function orderByProps(obj, order) {
   const orderProps = [];
   const restProps = [];
 
-  order.forEach((prop) => {
+  for (let prop in order) {
     if (prop in obj) {
       orderProps.push({ key: prop, value: obj[prop] });
     }
-  });
+  }
 
   for (let prop in obj) {
     if (!order.includes(prop)) {
